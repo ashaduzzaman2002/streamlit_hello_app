@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import pandas_datareader as data
 import plotly.figure_factory as ff
-# from keras.models import load_model
+from keras.models import load_model
 import streamlit as st
 
 st.set_page_config(page_title='Stock Prediction',
@@ -57,18 +57,18 @@ try:
     plt.plot(df.Close)
     st.pyplot(fig)
 
-    # # Training and testing
+    # Training and testing
 
-    # data_training = pd.DataFrame(df['Close'][0:int(len(df)*0.70)])
-    # data_testing = pd.DataFrame(df['Close'][int(len(df)*0.70):len(df)])
+    data_training = pd.DataFrame(df['Close'][0:int(len(df)*0.70)])
+    data_testing = pd.DataFrame(df['Close'][int(len(df)*0.70):len(df)])
 
-    # scaler = MinMaxScaler(feature_range=(0, 1))
+    scaler = MinMaxScaler(feature_range=(0, 1))
 
-    # data_training_arr = scaler.fit_transform(data_training)
+    data_training_arr = scaler.fit_transform(data_training)
 
 
-    # # Load ML model
-    # model = load_model('keras_model.h5')
+    # Load ML model
+    model = load_model('keras_model.h5')
 
 
     # # Tesing part
