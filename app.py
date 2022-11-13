@@ -85,11 +85,11 @@ try:
         y_test.append(input_data[i, 0])
 
     x_test, y_test = np.array(x_test), np.array(y_test)
-    y_predicted = model.predict(x_test)
+    # y_predicted = model.predict(x_test)
     scaler = scaler.scale_
 
     scaler_factor = 1/scaler[0]
-    y_predicted = y_predicted * scaler_factor
+    # y_predicted = y_predicted * scaler_factor
     y_test = y_test * scaler_factor
 
 
@@ -98,7 +98,7 @@ try:
     st.subheader('Prediction vs Original')
     fig2 = plt.figure(figsize=(12, 6))
     plt.plot(y_test, 'b', label='Original Price')
-    plt.plot(y_predicted, 'r', label='Predicted Price')
+    # plt.plot(y_predicted, 'r', label='Predicted Price')
     plt.xlabel('Time')
     plt.ylabel('Price')
     plt.legend()
