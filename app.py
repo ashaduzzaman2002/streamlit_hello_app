@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import pandas_datareader as data
 import plotly.figure_factory as ff
-from keras.models import load_model
+# from keras.models import load_model
 import streamlit as st
 
 st.set_page_config(page_title='Stock Prediction',
